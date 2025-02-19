@@ -10,6 +10,7 @@ const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [isHasClicked, setHasClicked] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  console.log("🚀 ~ isLoading:", isLoading);
   const [loadedVideos, setLoadedVideos] = useState(0);
 
   const totalVideos = 4;
@@ -19,12 +20,10 @@ const Hero = () => {
     setLoadedVideos((prev) => prev + 1);
   };
 
-  const upComingVideoIndex = (currentIndex % totalVideos) + 1;
-
   const handleMiniVdClick = () => {
     setHasClicked(true);
 
-    setCurrentIndex(upComingVideoIndex);
+    setCurrentIndex((prevIndex) => (prevIndex % totalVideos) + 1);
   };
 
   useEffect(() => {
@@ -104,7 +103,7 @@ const Hero = () => {
             >
               <video
                 ref={nextVideoRef}
-                src={getVideoSrc(upComingVideoIndex)}
+                src={getVideoSrc((currentIndex % totalVideos) + 1)}
                 loop
                 muted
                 id="current-video"
@@ -132,6 +131,7 @@ const Hero = () => {
             muted
             id="current-video"
             className="absolute left-0 top-0 size-full object-cover object-center"
+            onLoadedData={handleVideoLoad}
           />
         </div>
         <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
