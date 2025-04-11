@@ -60,7 +60,16 @@ const Navbar = () => {
       <header className="absolute top-1/2 w-full -translate-y-1/2">
         <nav className="flex size-full items-center justify-between p-4">
           <div className="flex items-center gap-7 ">
-            <img className="w-10" src="img/logo.png" alt="logo" />
+            <img
+              src="img/logo.png"
+              srcSet="img/logo.png 400w, img/logo.png 800w"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="w-10"
+              alt="logo"
+              width="40"
+              height="40"
+            />
+
             <Button
               id="product-button"
               title="Product"
@@ -75,14 +84,17 @@ const Navbar = () => {
                   key={item}
                   className="nav-hover-btn"
                   href={`#${item.toLowerCase()}`}
+                  aria-label="Scroll to section"
                 >
                   {item}
                 </a>
               ))}
             </div>
             <button
-              className="ml-10 flex items-center  space-x-0.5"
+              id="audio-button"
+              className="ml-10 flex items-center space-x-0.5"
               onClick={toggleAudioIndicator}
+              aria-label="Toggle audio indicator"
             >
               <audio
                 ref={audioElementRef}

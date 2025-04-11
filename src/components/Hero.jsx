@@ -10,7 +10,6 @@ const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [isHasClicked, setHasClicked] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  console.log("🚀 ~ isLoading:", isLoading);
   const [loadedVideos, setLoadedVideos] = useState(0);
 
   const totalVideos = 4;
@@ -113,12 +112,13 @@ const Hero = () => {
             </div>
           </div>
           <video
+            poster="/images/hero-placeholder.jpg"
             ref={nextVideoRef}
             src={getVideoSrc(currentIndex)}
             loop
             muted
             id="next-video"
-            className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
+            className="absolute-center absolute z-20 size-64 object-cover object-center opacity-0 transition-opacity duration-500"
             onLoadedData={handleVideoLoad}
           />
 
@@ -138,7 +138,7 @@ const Hero = () => {
           G<b>A</b>ming
         </h1>
         <div className="absolute left-0 top-0 z-40 size-full">
-          <div className="mt-24 px-5 sm:px-10">
+          <div className="mt-24 px-5 sm:px-10 w-fit">
             <h1 className="special-font hero-heading text-blue-100 ">
               redefi<b>n</b>e
             </h1>

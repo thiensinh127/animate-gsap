@@ -3,9 +3,26 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="./public/img/logo.png" />
+  <!-- preload trong <head> (chỉ 1 lần mỗi font) -->
+  <link rel="preload" href="/fonts/zentry-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- <link rel="preload" href="/fonts/general.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/robert-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/robert-medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/circularweb-book.woff2" as="font" type="font/woff2" crossorigin> -->
+  <link rel="preload" as="video" href="/videos/hero-1.mp4" type="video/mp4">
+
+
+  <link rel="icon" type="image/svg+xml" href="/img/logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Animate with GSAP</title>
+  <meta name="description" content="Your app's concise summary here.">
+
+  <!-- Open Graph for social sharing -->
+  <meta property="og:title" content="My App" />
+  <meta property="og:description" content="Brief description for social media previews." />
+  <meta property="og:image" content="https://animate-gsap.vercel.app/resume/main/public/img/gallery-1.webp" />
+  <meta property="og:url" content="https://animate-gsap.vercel.app/resume/main/public/img/gallery-1.webp" />
+  <meta property="og:type" content="website" />
 </head>
 
 <body>

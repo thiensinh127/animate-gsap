@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://animate-gsap.vercel.app/sitemap.xml

@@ -4,6 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+html {
+  font-display: swap;
+}
+
 body {
   width: 100dvw;
   overflow-x: hidden;
@@ -15,26 +20,32 @@ body {
   @font-face {
     font-family: "circular-web";
     src: url("/fonts/circularweb-book.woff2") format("woff2");
+    font-display: swap;
   }
 
   @font-face {
     font-family: "general";
     src: url("/fonts/general.woff2") format("woff2");
+    font-display: swap;
   }
 
   @font-face {
     font-family: "robert-medium";
     src: url("/fonts/robert-medium.woff2") format("woff2");
+    font-display: swap;
   }
 
   @font-face {
     font-family: "robert-regular";
     src: url("/fonts/robert-regular.woff2") format("woff2");
+    font-display: swap;
   }
 
   @font-face {
     font-family: "zentry";
     src: url("/fonts/zentry-regular.woff2") format("woff2");
+    font-display: swap;
+
   }
 }
 
@@ -63,8 +74,13 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 
+  .special-font {
+    font-family: "Zentry", sans-serif;
+    font-feature-settings: "ss01" on;
+  }
+
   .special-font b {
-    font-family: "Zentry";
+    font-family: "Zentry", "Arial", sans-serif;
     font-feature-settings: "ss01" on;
   }
 
@@ -157,10 +173,12 @@ body {
     height: 4px;
     transform: translateY(-0px);
   }
+
   50% {
     height: 16px;
     transform: translateY(-4px);
   }
+
   100% {
     height: 4px;
     transform: translateY(-0px);
@@ -220,8 +238,7 @@ body {
 .three-body__dot:nth-child(2)::after {
   bottom: 0;
   left: 0;
-  animation: wobble1 var(--uib-speed) infinite calc(var(--uib-speed) * -0.15)
-    ease-in-out;
+  animation: wobble1 var(--uib-speed) infinite calc(var(--uib-speed) * -0.15) ease-in-out;
 }
 
 .three-body__dot:nth-child(3) {
@@ -247,6 +264,7 @@ body {
 }
 
 @keyframes wobble1 {
+
   0%,
   100% {
     transform: translateY(0%) scale(1);
@@ -260,6 +278,7 @@ body {
 }
 
 @keyframes wobble2 {
+
   0%,
   100% {
     transform: translateY(0%) scale(1);

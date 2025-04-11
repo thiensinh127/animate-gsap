@@ -1,9 +1,19 @@
 import AnimatedTitle from "./AnimateTitle";
 import Button from "./Button";
 
-const ImageClipBox = ({ src, clipClass }) => (
+const ImageClipBox = ({ src, clipClass, alt }) => (
   <div className={clipClass}>
-    <img src={src} />
+    <img
+      src={src.replace(".webp", "-800.webp")}
+      alt={alt}
+      srcSet={`
+    ${src.replace(".webp", "-400.webp")} 400w,
+    ${src.replace(".webp", "-800.webp")} 800w,
+    ${src.replace(".webp", "-1200.webp")} 1200w
+  `}
+      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 800px"
+      loading="lazy"
+    />
   </div>
 );
 
@@ -15,10 +25,12 @@ const Contact = () => {
           <ImageClipBox
             src="/img/contact-1.webp"
             clipClass="contact-clip-path-1"
+            alt="contact-1"
           />
           <ImageClipBox
             src="/img/contact-2.webp"
             clipClass="contact-clip-path-2 lg:translate-y-40 translate-y-60"
+            alt="contact-2"
           />
         </div>
 
@@ -26,10 +38,12 @@ const Contact = () => {
           <ImageClipBox
             src="/img/swordman-partial.webp"
             clipClass="absolute md:scale-125"
+            alt="contact-3"
           />
           <ImageClipBox
             src="/img/swordman.webp"
             clipClass="sword-man-clip-path md:scale-125"
+            alt="contact-4"
           />
         </div>
 
