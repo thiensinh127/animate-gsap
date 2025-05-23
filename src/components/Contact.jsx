@@ -4,23 +4,25 @@ import Button from "./Button";
 const ImageClipBox = ({ src, clipClass, alt }) => (
   <div className={clipClass}>
     <img
-      src={src.replace(".webp", "-800.webp")}
+      src={src}
       alt={alt}
       srcSet={`
-    ${src.replace(".webp", "-400.webp")} 400w,
-    ${src.replace(".webp", "-800.webp")} 800w,
-    ${src.replace(".webp", "-1200.webp")} 1200w
-  `}
+        ${src} 400w,
+        ${src} 800w,
+        ${src} 1200w
+      `}
       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 800px"
       loading="lazy"
+      className="w-full h-auto object-cover"
     />
   </div>
 );
 
 const Contact = () => {
   return (
-    <div id="contact" className="my-20 min-h-96 w-screen  px-10">
+    <div id="contact" className="my-20 min-h-96 w-screen px-10">
       <div className="relative rounded-lg bg-black py-24 text-blue-50 sm:overflow-hidden">
+        {/* Left Image Group */}
         <div className="absolute -left-20 top-0 hidden h-full w-72 overflow-hidden sm:block lg:left-20 lg:w-96">
           <ImageClipBox
             src="/img/contact-1.webp"
@@ -29,11 +31,12 @@ const Contact = () => {
           />
           <ImageClipBox
             src="/img/contact-2.webp"
-            clipClass="contact-clip-path-2 lg:translate-y-40 translate-y-60"
+            clipClass="contact-clip-path-2 translate-y-60 lg:translate-y-40"
             alt="contact-2"
           />
         </div>
 
+        {/* Right Image Group */}
         <div className="absolute -top-40 left-20 w-60 sm:top-1/2 md:left-auto md:right-10 lg:top-20 lg:w-80">
           <ImageClipBox
             src="/img/swordman-partial.webp"
@@ -47,6 +50,7 @@ const Contact = () => {
           />
         </div>
 
+        {/* Center Content */}
         <div className="flex flex-col items-center text-center">
           <p className="mb-10 font-general text-[10px] uppercase">
             Join Zentry

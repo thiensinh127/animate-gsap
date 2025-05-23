@@ -67,11 +67,11 @@ const FloatingImage = () => {
                   onMouseLeave={handleMouseLeave}
                   onMouseUp={handleMouseLeave}
                   onMouseEnter={handleMouseLeave}
-                  src="/img/entrance-800.webp"
+                  src="/img/entrance.webp"
                   srcSet="
-                    /img/entrance-400.webp 400w,
-                    /img/entrance-800.webp 800w,
-                    /img/entrance-1200.webp 1200w
+                    /img/entrance.webp 400w,
+                    /img/entrance.webp 800w,
+                    /img/entrance.webp 1200w
                   "
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 800px"
                   alt="Entrance"

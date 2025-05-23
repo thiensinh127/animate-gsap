@@ -50,12 +50,12 @@ const About = () => {
       <div className="h-dvh w-screen" id="clip">
         <div className="mask-clip-path about-image">
           <img
-            src="/img/about-800.webp"
+            src="/img/about.webp"
             srcSet="
-    /img/about-400.webp 400w,
-    /img/about-800.webp 800w,
-    /img/about-1200.webp 1200w
-  "
+             /img/about.webp 400w,
+              /img/about.webp 800w,
+             /img/about.webp 1200w
+            "
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px"
             alt="Background"
             className="absolute left-0 top-0 size-full object-cover"
